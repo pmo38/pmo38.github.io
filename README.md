@@ -1,6 +1,5 @@
 # migrate2openconcerto
-Documentation pour migrer une comptabilite vers l'ERP OpenConcerto (open Source).
-
+Documentation pour migrer une comptabilite vers le PGI OpenConcerto (open Source).
 
 Les questions à se poser avant.
 
