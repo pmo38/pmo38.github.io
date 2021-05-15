@@ -1,0 +1,1245 @@
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<meta name="generator=" content=" vym - view your mind - 2.6.11 - http://www.insilmaril.de/vym">
+<meta name="author" content="Moisson-Franckhauser Philippe"> 
+<meta name="description" content="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Cette documentation (carte heuristique, fichiers, scripts) sont sous Licence AGPL V3.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Les points importants pour migrer sa comptabilité :&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Les questions à ce poser avant de migrer sa comptabilité vers OpenConcerto (PGI libre).&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Pourquoi il est important de faire une migration sans tout retaper.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Comment le faire.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"> 
+<link rel='stylesheet' id='css.stylesheet' href='vym.css' />
+
+<head><title>Migrer comptabilité vers OpenConcerto</title></head>
+<body>
+<center><img src="schema-heuristique-migrer-vers-OpenConcerto.png"alt="Image of map: schema-heuristique-migrer-vers-OpenConcerto.vym" usemap='#imagemap'></center>
+<table class="vym-toc">
+<tr><td class="vym-toc-title">
+Contenu:
+</td></tr>
+<tr><td>
+<div class="vym-toc-branch-0"><a href="#mc:0">  Migrer comptabilité vers OpenConcerto</a></br>
+</div><div class="vym-toc-branch-1"><a href="#mc:0,bo:0"> 1.  Installation Open Concerto</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:0,bo:0"> 1.1.  Le site</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:0,bo:1"> 1.2.  Pré-requis</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:0,bo:1,bo:0"> 1.2.1.  java</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:0,bo:1,bo:1"> 1.2.2.  libre office</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:0,bo:1,bo:2"> 1.2.3.  PostgreSQL</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:0,bo:2"> 1.3.  OS</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:0,bo:2,bo:0"> 1.3.1.  Windows</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:0,bo:2,bo:1"> 1.3.2.  Linux</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0"> 1.3.2.1.  Ubuntu
+OC 1.6.3</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0"> 1.3.2.1.1.  monoposte</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0"> 1.3.2.1.1.1.  vérification pré-requis</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0,bo:0"> 1.3.2.1.1.1.1.  java</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0,bo:1"> 1.3.2.1.1.1.2.  libre office</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:1"> 1.3.2.1.1.2.  Non automatique</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2"> 1.3.2.1.1.3.  Manuellement</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:0"> 1.3.2.1.1.3.1.  Téléchargement</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1"> 1.3.2.1.1.3.2.  Installation</a></br>
+</div><div class="vym-toc-branch-8"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:0"> 1.3.2.1.1.3.2.1.  pre-Installation</a></br>
+</div><div class="vym-toc-branch-8"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:1"> 1.3.2.1.1.3.2.2.  Configuration au 1er lancement</a></br>
+</div><div class="vym-toc-branch-9"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:1,bo:0"> 1.3.2.1.1.3.2.2.1.  vidéo</a></br>
+</div><div class="vym-toc-branch-8"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2"> 1.3.2.1.1.3.2.3.  espaces</a></br>
+</div><div class="vym-toc-branch-9"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0"> 1.3.2.1.1.3.2.3.1.  Système</a></br>
+</div><div class="vym-toc-branch-10"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0,bo:0"> 1.3.2.1.1.3.2.3.1.1.  les programmes</a></br>
+</div><div class="vym-toc-branch-10"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0,bo:1"> 1.3.2.1.1.3.2.3.1.2.  Paramétrisation O.C.</a></br>
+</div><div class="vym-toc-branch-9"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1"> 1.3.2.1.1.3.2.3.2.  Travail</a></br>
+</div><div class="vym-toc-branch-10"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1,bo:0"> 1.3.2.1.1.3.2.3.2.1.  DataBase</a></br>
+</div><div class="vym-toc-branch-10"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1,bo:1"> 1.3.2.1.1.3.2.3.2.2.  Configuration</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1"> 1.3.2.1.2.  multipostes</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:0"> 1.3.2.1.2.1.  openconcerto.org / Vidéos</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:0,bo:0"> 1.3.2.1.2.1.1.  vidéo youtube</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:1"> 1.3.2.1.2.2.  gestion des droits ?</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:2"> 1.3.2.1.2.3.  </a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:0,bo:2,bo:2"> 1.3.3.  MAC</a></br>
+</div><div class="vym-toc-branch-1"><a href="#mc:0,bo:1"> 2.  Préambule</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:1,bo:0"> 2.1.  OpenConcerto c'est quoi ?</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:0,bo:0"> 2.1.1.  Logiciel prof gestion libre et gratuit</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:0,bo:0,bo:0"> 2.1.1.1.  https://www.openconcerto.org/fr/fonctionnalites.html</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:0,bo:1"> 2.1.2.  Je retiens</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:0,bo:1,bo:0"> 2.1.2.1.  Comptabilité (libre)</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:0,bo:1,bo:1"> 2.1.2.2.  gestion clients/fournisseurs</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:0,bo:1,bo:2"> 2.1.2.3.  Caisse, certificat payant</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:0,bo:1,bo:3"> 2.1.2.4.  Paye, DSN (module payant)</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:0,bo:1,bo:3,bo:0"> 2.1.2.4.1.  https://www.openconcerto.org/fr/paye.html</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:1,bo:1"> 2.2.  OpenConcerto pour qui ?</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:1,bo:0"> 2.2.1.  version libre sous conditions</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0"> 2.2.1.1.  Qui est assujeti aux log. caisse  sécurisé</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0,bo:0"> 2.2.1.1.1.  Communiqué simplification au 1 janv 2018</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0,bo:0,bo:0"> 2.2.1.1.1.1.  Communique presse Darmanin 15 juin 201722503.pdf</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0,bo:1"> 2.2.1.1.2.  Champ d'application</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0,bo:1,bo:0"> 2.2.1.1.2.1.  https://www.impots.gouv.fr/portail/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0,bo:2"> 2.2.1.1.3.  arbre de décision</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:1,bo:1,bo:0,bo:0,bo:2,bo:0"> 2.2.1.1.3.1.  https://www.impots.gouv.fr/portail/suis-je-oblige-davoir-un-logiciel-de-caisse-securise</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:1,bo:0,bo:1"> 2.2.1.2.  Obligation de téléprocédure (EDI/EFI)</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:1,bo:0,bo:1,bo:0"> 2.2.1.2.1.  https://www.impots.gouv.fr/portail/professionnel/obligations-de-teleprocedures</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:1,bo:0,bo:2"> 2.2.1.3.  DSN</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:1,bo:1"> 2.2.2.  Autres cas, soit des modules payants, soit une version plus complète payante.</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:1,bo:2"> 2.3.  Open Concerto pourquoi ?</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:2,bo:0"> 2.3.1.  Le coùt</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:2,bo:0,bo:0"> 2.3.1.1.  d'acquisition</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:2,bo:0,bo:1"> 2.3.1.2.  d'exploitation</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:2,bo:1"> 2.3.2.  évolution</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:2,bo:1,bo:0"> 2.3.2.1.  PGI libre</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:2,bo:2"> 2.3.3.  formation</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:2,bo:2,bo:0"> 2.3.3.1.  PGI libre =&gt; accessible en école</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:1,bo:3"> 2.4.  Open Concerto documentations</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:3,bo:0"> 2.4.1.  Le guide de démarrage</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:3,bo:0,bo:0"> 2.4.1.1.  https://www.openconcerto.org/fr/Guide_OpenConcerto.pdf</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:3,bo:1"> 2.4.2.  Le manuel officiel</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:3,bo:1,bo:0"> 2.4.2.1.  Sommaire</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:3,bo:1,bo:0,bo:0"> 2.4.2.1.1.  https://www.openconcerto.org/fr/telechargement/Manuel_OpenConcerto_Sommaire.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:3,bo:1,bo:1"> 2.4.2.2.  Page pour commander</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:3,bo:1,bo:1,bo:0"> 2.4.2.2.1.  https://www.ilm-informatique.fr/openconcerto/manuel_openconcerto</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:3,bo:2"> 2.4.3.  Le forum</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:3,bo:3"> 2.4.4.  Autres</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0"> 2.4.4.1.  youtube</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0"> 2.4.4.1.1.  exemple</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0"> 2.4.4.1.1.1.  Chaine youtube P ProfMedan</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:0"> 2.4.4.1.1.1.1.  https://www.youtube.com/channel/UCCpTSPz56MNXio3cYXEJmmQ</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:1"> 2.4.4.1.1.1.2.  introduction</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:2"> 2.4.4.1.1.1.3.  prise en main</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:3"> 2.4.4.1.1.1.4.  gestion des taches, utilisateurs, droits</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:4"> 2.4.4.1.1.1.5.  création d'une société</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:5"> 2.4.4.1.1.1.6.  création fournisseurs</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:6"> 2.4.4.1.1.1.7.  création d'un client</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:7"> 2.4.4.1.1.1.8.  création d'un article</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:8"> 2.4.4.1.1.1.9.  devis facture réduction</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:3,bo:3,bo:1"> 2.4.4.2.  GitHub</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:3,bo:3,bo:1,bo:0"> 2.4.4.2.1.  Ce document par exemple</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:3,bo:4"> 2.4.5.  Considérations</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:1,bo:4"> 2.5.  Pourquoi une migration</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:4,bo:0"> 2.5.1.  minimisation des risques</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:4,bo:1"> 2.5.2.  Durée courte création contexte</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:4,bo:1,bo:0"> 2.5.2.1.  pas besoin de resaisir</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1"> 2.5.2.2.  Cela favorise</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0"> 2.5.2.2.1.  Apprentissage</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:0"> 2.5.2.2.1.1.  B-A BA</a></br>
+</div><div class="vym-toc-branch-6"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1"> 2.5.2.2.1.2.  Confiance étapes clées</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:0"> 2.5.2.2.1.2.1.  validation</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:1"> 2.5.2.2.1.2.2.  clôture</a></br>
+</div><div class="vym-toc-branch-7"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:2"> 2.5.2.2.1.2.3.  exports</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:1,bo:4,bo:1,bo:1,bo:1"> 2.5.2.2.2.  exploration</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:4,bo:2"> 2.5.3.  valider dernier exercice</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:4,bo:2,bo:0"> 2.5.3.1.  Validation même niveau fonctionel</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:1,bo:4,bo:2,bo:1"> 2.5.3.2.  Validation même résultat</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:1,bo:4,bo:3"> 2.5.4.  Conséquences non migration</a></br>
+</div><div class="vym-toc-branch-1"><a href="#mc:0,bo:2"> 3.  Comment faire</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:2,bo:0"> 3.1.  Ce qu'il faut faire</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:0,bo:0"> 3.1.1.  Adapter les journaux à l'entreprise</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:0,bo:0"> 3.1.1.1.  les banques</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:0,bo:1"> 3.1.1.2.  les caisses</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:0,bo:2"> 3.1.1.3.  les A Nouveaux</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:0,bo:3"> 3.1.1.4.  les extournes</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:0,bo:4"> 3.1.1.5.  les OD Situation</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:0,bo:5"> 3.1.1.6.  ...</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:0,bo:1"> 3.1.2.  Adapter le plan comptable à celui de l'entreprise</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:0"> 3.1.2.1.  Le format des comptes</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:1"> 3.1.2.2.  les comptes banques</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:2"> 3.1.2.3.  les comptes caisses</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:3"> 3.1.2.4.  les comptes fournisseurs</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:4"> 3.1.2.5.  les comptes clients</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:5"> 3.1.2.6.  ...</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:1,bo:6"> 3.1.2.7.  La norme</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:0,bo:1,bo:6,bo:0"> 3.1.2.7.1.  https://www.anc.gouv.fr/...</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:0,bo:2"> 3.1.3.  Adapter le fichier fec pour importer les écritures</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:2,bo:0"> 3.1.3.1.  encodage UTF-8</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:0,bo:2,bo:0,bo:0"> 3.1.3.1.1.  Justification-encodage-UTF8.pdf</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:0,bo:2,bo:0,bo:1"> 3.1.3.1.2.  2021-05-14</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:0,bo:2,bo:1"> 3.1.3.2.  Suppression lignes inutiles</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:2,bo:1"> 3.2.  Quels outils</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:1,bo:0"> 3.2.1.  notepadqq/notepad++</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:1,bo:1"> 3.2.2.  Libre Office</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:2,bo:2"> 3.3.  Procédure pour 
+importer des ecritures</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:2,bo:0"> 3.3.1.  Le schéma</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:2,bo:0,bo:0"> 3.3.1.1.  procedure-migration-vers-OpenConcerto.pdf</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:2,bo:1"> 3.3.2.  lecture schéma</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:2,bo:2"> 3.3.3.  Remarque</a></br>
+</div><div class="vym-toc-branch-2"><a href="#mc:0,bo:2,bo:3"> 3.4.  instantiations
+ procédure
+importation des écritures</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:0"> 3.4.1.  Création Sté</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:0,bo:0"> 3.4.1.1.  Point de sauvegarde initial</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:0,bo:1"> 3.4.1.2.  Validation sauvegardes</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:0,bo:2"> 3.4.1.3.  journaux défaut</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:0,bo:3"> 3.4.1.4.  comptes défaut</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:0,bo:4"> 3.4.1.5.  Point de sauvegarde création</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:0,bo:5"> 3.4.1.6.  Dates Exercice</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:1"> 3.4.2.  Exports</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:1,bo:0"> 3.4.2.1.  Export liste Journaux</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:1,bo:0,bo:0"> 3.4.2.1.1.  export-journaux.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:1,bo:1"> 3.4.2.2.  Export plan comptable</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:1,bo:1,bo:0"> 3.4.2.2.1.  export-comptes.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:1,bo:2"> 3.4.2.3.  FEC ILL</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:2"> 3.4.3.  Préparation FEC tier
+=&gt; FEC_tmp.csv</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:2,bo:0"> 3.4.3.1.  Le shéma instancié</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:2,bo:0,bo:0"> 3.4.3.1.1.  fec_export2tmp.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:2,bo:1"> 3.4.3.2.  </a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:2,bo:1,bo:0"> 3.4.3.2.1.  UTF-8</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:2,bo:1,bo:1"> 3.4.3.2.2.  OS (CR/LF)</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:2,bo:2"> 3.4.3.3.  Suppression lignes vides</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:3"> 3.4.4.  Suppression des zéros
+FEC_tmp.csv =&gt; FEC_tmp.ods</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:3,bo:0"> 3.4.4.1.  FEC-macro.ods</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:3,bo:0,bo:0"> 3.4.4.1.1.  FEC-macro.ods</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:3,bo:1"> 3.4.4.2.  processus</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:3,bo:1,bo:0"> 3.4.4.2.1.  fec_csv2ods.pdf</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:4"> 3.4.5.  Préparation Structurelle</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:4,bo:0"> 3.4.5.1.  Adaptation Journaux</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:4,bo:0,bo:0"> 3.4.5.1.1.  Adaptation-Journaux.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:4,bo:1"> 3.4.5.2.  Adaptation plan comptable</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:4,bo:1,bo:0"> 3.4.5.2.1.  Adaptation-comptes.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:4,bo:2"> 3.4.5.3.  Sauvegarde Structure O.C. Entreprise</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:5"> 3.4.6.  Importation ecritures dans O.C.</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:5,bo:0"> 3.4.6.1.  Remarques</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:5,bo:1"> 3.4.6.2.  création FEC-import.ods</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:5,bo:1,bo:0"> 3.4.6.2.1.  creation-fec-import.pdf</a></br>
+</div><div class="vym-toc-branch-4"><a href="#mc:0,bo:2,bo:3,bo:5,bo:2"> 3.4.6.3.  importation</a></br>
+</div><div class="vym-toc-branch-5"><a href="#mc:0,bo:2,bo:3,bo:5,bo:2,bo:0"> 3.4.6.3.1.  importation-fec.pdf</a></br>
+</div><div class="vym-toc-branch-3"><a href="#mc:0,bo:2,bo:3,bo:6"> 3.4.7.  Création FEC pour O. C.</a></br>
+</div></td></tr>
+</table>
+
+
+<h1><span class='vym-branch-0' style='color:#000000' id='mc:0'> Migrer comptabilité vers OpenConcerto</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph">Cette documentation (carte heuristique, fichiers, scripts) sont sous Licence AGPL V3.</p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph">Vous y trouverez les points importants pour migrer sa comptabilité vers OpenConcerto 1.6.3:</p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph">- Les questions à ce poser avant de migrer sa comptabilité vers OpenConcerto (PGI libre).</p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph">- Pourquoi il est important de faire une migration sans tout retaper.</p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph">- Comment le faire.<span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> </span></p>
+</td></tr></table>
+</h1>
+  
+  <h2><span class='vym-branch-1' style='color:#000000' id='mc:0,bo:0'>1.  Installation Open Concerto</span></h2>
+    <ul class="vym-list-ul-2">
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:0,bo:0'><a href="https://www.openconcerto.org/fr/telechargement.html">1.1.  Le site<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:0,bo:1'>1.2.  Pré-requis</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:0,bo:1,bo:0'>1.2.1.  java</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Java runtime edition 8 ou supérieur
+</td></tr></table>
+  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:0,bo:1,bo:1'>1.2.2.  libre office</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Open Office ou libre office.<br/><br/>Open Concerto utilise l'interface "open document" pour produire des documents<br/>ods et odt ou pour lire des documents.<br/><br/>Dans cette présentation, les macros et le processus d'adaptation du fichier FEC<br/>sont réalisées sous libre office.
+</td></tr></table>
+  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:0,bo:1,bo:2'>1.2.3.  PostgreSQL</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Nécessaire pour la version multi-postes.
+</td></tr></table>
+  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:0,bo:2'>1.3.  OS</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:0,bo:2,bo:0'>1.3.1.  Windows<img src="flags/flag-cross-red.png" alt="Flag: cross-red"></span>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1'>1.3.2.  Linux</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0'>1.3.2.1.  Ubuntu
+OC 1.6.3</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0'>1.3.2.1.1.  monoposte</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0'>1.3.2.1.1.1.  vérification pré-requis</span>
+              <ul class="vym-list-ul-7">
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0,bo:0'>1.3.2.1.1.1.1.  java</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; font-style:italic; color:#000000;">exemple$ </span><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; font-style:italic; color:#ef2929;">java --version</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; font-style:italic; color:#000000;">openjdk 11.0.9.1 2020-11-04</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; font-style:italic; color:#000000;">OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.04)</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; font-style:italic; color:#000000;">OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.04, mixed mode, sharing)</span></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0,bo:1'>1.3.2.1.1.1.2.  libre office</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">exemple$ libreoffice --version</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">LibreOffice 6.4.6.2 40(Build:2)</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> </span></p>
+</td></tr></table>
+  </li>
+              </ul>  </li>
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:1'>1.3.2.1.1.2.  Non automatique<img src="flags/flag-smiley-sad.png" alt="Flag: smiley-sad"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Avec Gnome sous Ubuntu, le .deb d'open concerto ne veut pas s'installer<br/>automatiquement.
+</td></tr></table>
+  </li>
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2'>1.3.2.1.1.3.  Manuellement</span>
+              <ul class="vym-list-ul-7">
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:0'>1.3.2.1.1.3.1.  Téléchargement</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono';">Charger sur le site.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono';">Unzip localement.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono';">=&gt; </span><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#ef2929;">/home/exemple/Documents/openconcerto-1.6.3.deb</span></p>
+</td></tr></table>
+  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1'>1.3.2.1.1.3.2.  Installation</span>
+                <ul class="vym-list-ul-8">
+                  <li><span class='vym-branch-8' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:0'>1.3.2.1.1.3.2.1.  pre-Installation</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#ef2929;">sudo apt install /home/exemple/Documents/openconcerto-1.6.3.deb</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#ef2929;">Cela va juste installer la pre-version.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+  </li>
+                  <li><span class='vym-branch-8' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:1'>1.3.2.1.1.3.2.2.  Configuration au 1er lancement</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Au 1er lancement, on définit où enregistrer la DB et la configuration.<br/>Si on considère monoposte, une seule machine, le $HOME peut être l'espace de<br/>Travail.
+</td></tr></table>
+
+                  <ul class="vym-list-ul-9">
+                    <li><span class='vym-branch-9' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:1,bo:0'><a href="file:Videos/premier-lancement-OpenConcerto.mkv">1.3.2.1.1.3.2.2.1.  vidéo<img src="flags/flag-thumb-down.png" alt="Flag: thumb-down"><img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+                  </ul>  </li>
+                  <li><span class='vym-branch-8' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2'>1.3.2.1.1.3.2.3.  espaces</span>
+                  <ul class="vym-list-ul-9">
+                    <li><span class='vym-branch-9' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0'>1.3.2.1.1.3.2.3.1.  Système</span>
+                    <ul class="vym-list-ul-10">
+                      <li><span class='vym-branch-10' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0,bo:0'>1.3.2.1.1.3.2.3.1.1.  les programmes</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">répertoire d'installation :</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	- /opt/openconcerto</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	ou </span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	- /usr/share/openconcerto</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Cela dépend de comment vous faites l'installation.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Pour le retrouver, il suffit de regarder comment est lancé le logiciel en regardant le fichier :</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">/usr/share/applications/OpenConcerto.desktop </span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Celui-ci donne le &quot;Path=...&quot; et la commande lancée &quot;Exec=OpenConcerto.sh&quot; </span></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+  </li>
+                      <li><span class='vym-branch-10' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0,bo:1'>1.3.2.1.1.3.2.3.1.2.  Paramétrisation O.C.</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+/opt/openconcerto
+</td></tr></table>
+  </li>
+                    </ul>  </li>
+                    <li><span class='vym-branch-9' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1'>1.3.2.1.1.3.2.3.2.  Travail</span>
+                    <ul class="vym-list-ul-10">
+                      <li><span class='vym-branch-10' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1,bo:0'>1.3.2.1.1.3.2.3.2.1.  DataBase</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Par défaut $HOME/.local/share/OpenConcerto/DBData
+</td></tr></table>
+  </li>
+                      <li><span class='vym-branch-10' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1,bo:1'>1.3.2.1.1.3.2.3.2.2.  Configuration</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+$HOME/.config/OpenConcerto
+</td></tr></table>
+  </li>
+                    </ul>  </li>
+                  </ul>  </li>
+                </ul>  </li>
+              </ul>  </li>
+            </ul>  </li>
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:1'>1.3.2.1.2.  multipostes</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:0'>1.3.2.1.2.1.  openconcerto.org / Vidéos</span>
+              <ul class="vym-list-ul-7">
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:0,bo:0'><a href="https://youtu.be/yT9kDulrNW0">1.3.2.1.2.1.1.  vidéo youtube<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+              </ul>  </li>
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:1'>1.3.2.1.2.2.  gestion des droits ?</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Multipostes =&gt; plusieurs utilisateurs (création d'un groupe Unix pour les droits<br/>?)<br/>On va gérer les droits dans structure.<br/><br/>L'administrateur d'Open Concerto est-il aussi l'administrateur de PostGre ?
+</td></tr></table>
+  </li>
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:2'>1.3.2.1.2.3.  <img src="flags/flag-cross-red.png" alt="Flag: cross-red"></span>  </li>
+            </ul>  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:0,bo:2,bo:2'>1.3.3.  MAC<img src="flags/flag-cross-red.png" alt="Flag: cross-red"></span>  </li>
+      </ul>  </li>
+    </ul>
+  <h2><span class='vym-branch-1' style='color:#000000' id='mc:0,bo:1'>2.  Préambule</span></h2>
+    <ul class="vym-list-ul-2">
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:1,bo:0'>2.1.  OpenConcerto c'est quoi ?</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:0,bo:0'>2.1.1.  Logiciel prof gestion libre et gratuit</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:0,bo:0,bo:0'><a href="https://www.openconcerto.org/fr/fonctionnalites.html">2.1.1.1.  https://www.openconcerto.org/fr/fonctionnalites.html<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:0,bo:1'>2.1.2.  Je retiens</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:0,bo:1,bo:0'>2.1.2.1.  Comptabilité (libre)</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph">système comptable complet incluant </p>
+<p class="vym-note-paragraph">la comptabilité analytique, </p>
+<p class="vym-note-paragraph">génération de bilans </p>
+<p class="vym-note-paragraph">et comptes de résultat.</p>
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:0,bo:1,bo:1'>2.1.2.2.  gestion clients/fournisseurs</span>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:0,bo:1,bo:2'>2.1.2.3.  Caisse, certificat payant</span>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:0,bo:1,bo:3'>2.1.2.4.  Paye, DSN (module payant)</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:0,bo:1,bo:3,bo:0'><a href="https://www.openconcerto.org/fr/paye.html">2.1.2.4.1.  https://www.openconcerto.org/fr/paye.html<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+        </ul>  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:1,bo:1'>2.2.  OpenConcerto pour qui ?</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0'>2.2.1.  version libre sous conditions</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Version libre si :<br/>- pas d'obligation de caisse certifiée,<br/>- pas d'obligation d'EDI,<br/>- pas de DSN (pas de salariés).
+</td></tr></table>
+
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0'>2.2.1.1.  Qui est assujeti aux log. caisse  sécurisé</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0,bo:0'>2.2.1.1.1.  Communiqué simplification au 1 janv 2018</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0,bo:0,bo:0'><a href="file:Editions/Communique-presse-Darmanin-15-juin-201722503.pdf">2.2.1.1.1.1.  Communique presse Darmanin 15 juin 201722503.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+            </ul>  </li>
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0,bo:1'>2.2.1.1.2.  Champ d'application</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0,bo:1,bo:0'><a href="https://www.impots.gouv.fr/portail/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de">2.2.1.1.2.1.  https://www.impots.gouv.fr/portail/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+            </ul>  </li>
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0,bo:2'>2.2.1.1.3.  arbre de décision</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:0,bo:2,bo:0'><a href="https://www.impots.gouv.fr/portail/suis-je-oblige-davoir-un-logiciel-de-caisse-securise">2.2.1.1.3.1.  https://www.impots.gouv.fr/portail/suis-je-oblige-davoir-un-logiciel-de-caisse-securise<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+            </ul>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:1'>2.2.1.2.  Obligation de téléprocédure (EDI/EFI)</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:1,bo:0'><a href="https://www.impots.gouv.fr/portail/professionnel/obligations-de-teleprocedures">2.2.1.2.1.  https://www.impots.gouv.fr/portail/professionnel/obligations-de-teleprocedures<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:1,bo:0,bo:2'><a href="https://www.economie.gouv.fr/entreprises/declaration-sociale-nominative-dsn">2.2.1.3.  DSN<img src="flags/flag-url.png" alt="Flag: url"></a></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph">Déclaration sociale nominative:</p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph">Toutes les <span style=" font-weight:600;">entreprises du secteur privé du régime général et du régime agricole de sécurité sociale et qui emploient des salariés</span> sont dans le périmètre de la DSN.</p>
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:1,bo:1'>2.2.2.  Autres cas, soit des modules payants, soit une version plus complète payante.</span>  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:1,bo:2'>2.3.  Open Concerto pourquoi ?<img src="flags/flag-exclamationmark.png" alt="Flag: exclamationmark"></span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:2,bo:0'>2.3.1.  Le coùt</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:2,bo:0,bo:0'>2.3.1.1.  d'acquisition</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Si on utilise que la partie libre, c'est gratuit.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:2,bo:0,bo:1'>2.3.1.2.  d'exploitation</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Pas de licence.<br/>L'interface suppose que l'on maitrise la comptabilité.<br/>Ni plus ni moins significativement de temps qu'avec un autre logiciel de saisie<br/>comptable.<br/>La doc papier coute 79€ TTC.<br/>Le backup est facile.
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:2,bo:1'>2.3.2.  évolution</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:2,bo:1,bo:0'>2.3.2.1.  PGI libre</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Le logiciel est sous licence GPL. Les évolutions sont donc libre.<br/><br/>ILL Informatique protège son business (cf le forum).<br/><br/>Il y a un équilibre entre les parties libres et les modules qui ne le sont pas<br/>(caisse, paye).<br/><br/>Pour l'utilisateur de la partie libre, c'est quand même la possibilité d'avoir<br/>les fonctionalités d'un PGI et pas qu'une comptabilité.<br/>Un certains nombre de modules sont disponibles sur la page de téléchargement. <br/><br/>Après si votre société se développe, il y a toujours la possibilité d'ajouter<br/>les modules payants (caisse, paye)
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:2,bo:2'>2.3.3.  formation</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:2,bo:2,bo:0'>2.3.3.1.  PGI libre =&gt; accessible en école</span>  </li>
+        </ul>  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:1,bo:3'><a href="https://www.openconcerto.org/fr/documentation.html">2.4.  Open Concerto documentations<img src="flags/flag-url.png" alt="Flag: url"></a></span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:3,bo:0'>2.4.1.  Le guide de démarrage</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Utile pour commencer une comptabilité à partir de rien mais en ayant des<br/>connaissances de comptabilité.
+</td></tr></table>
+
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:3,bo:0,bo:0'><a href="https://www.openconcerto.org/fr/Guide_OpenConcerto.pdf">2.4.1.1.  https://www.openconcerto.org/fr/Guide_OpenConcerto.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:3,bo:1'>2.4.2.  Le manuel officiel</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:3,bo:1,bo:0'>2.4.2.1.  Sommaire</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">D'après le sommaire:</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Si on utilise que la comptabilité, l'apport est assez faible comparé au guide de démarrage et autres ressources.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Si on utilise d'autres aspect de l'ERP, il n'y a pas d'autres documentations structurées et accessibles. On peut quand même trouver plein de réponses dans le forum. </span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:3,bo:1,bo:0,bo:0'><a href="https://www.openconcerto.org/fr/telechargement/Manuel_OpenConcerto_Sommaire.pdf">2.4.2.1.1.  https://www.openconcerto.org/fr/telechargement/Manuel_OpenConcerto_Sommaire.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:3,bo:1,bo:1'>2.4.2.2.  Page pour commander</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Les documentations (conception, utilisation) ne sont pas libre contrairement au<br/>logiciel.<br/>Le concepteur s'en justifie dans le forum pour protéger "son" produit.
+</td></tr></table>
+
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:3,bo:1,bo:1,bo:0'><a href="https://www.ilm-informatique.fr/openconcerto/manuel_openconcerto">2.4.2.2.1.  https://www.ilm-informatique.fr/openconcerto/manuel_openconcerto<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:3,bo:2'><a href="https://www.openconcerto.org/forum/">2.4.3.  Le forum<img src="flags/flag-smiley-good.png" alt="Flag: smiley-good"><img src="flags/flag-url.png" alt="Flag: url"></a></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Le nerf de la doc.<br/>Des sujets sur <br/>l'installation,<br/>l'import des écritures, <br/>et bien d'autres sur l'ERP.
+</td></tr></table>
+  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3'>2.4.4.  Autres</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0'>2.4.4.1.  youtube</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0'>2.4.4.1.1.  exemple</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0'>2.4.4.1.1.1.  Chaine youtube P ProfMedan</span>
+              <ul class="vym-list-ul-7">
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:0'><a href="https://www.youtube.com/channel/UCCpTSPz56MNXio3cYXEJmmQ">2.4.4.1.1.1.1.  https://www.youtube.com/channel/UCCpTSPz56MNXio3cYXEJmmQ<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:1'>2.4.4.1.1.1.2.  introduction</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:2'>2.4.4.1.1.1.3.  prise en main</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:3'>2.4.4.1.1.1.4.  gestion des taches, utilisateurs, droits</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:4'>2.4.4.1.1.1.5.  création d'une société</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:5'>2.4.4.1.1.1.6.  création fournisseurs</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:6'>2.4.4.1.1.1.7.  création d'un client</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:7'>2.4.4.1.1.1.8.  création d'un article</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:8'>2.4.4.1.1.1.9.  devis facture réduction</span>  </li>
+              </ul>  </li>
+            </ul>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:1'>2.4.4.2.  GitHub</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:3,bo:3,bo:1,bo:0'>2.4.4.2.1.  Ce document par exemple</span>  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:3,bo:4'>2.4.5.  Considérations</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Pour voir émerger une documentation libre, il faut :<br/>- une licence permetant l'usage libre <br/>- une licence contraignant les évolutions à rester libre aussi.<br/><br/>C'est pourquoi cette documentation est sous licence : "GNU AGPLv3"
+</td></tr></table>
+  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:1,bo:4'>2.5.  Pourquoi une migration<img src="flags/flag-exclamationmark.png" alt="Flag: exclamationmark"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:4,bo:0'>2.5.1.  minimisation des risques<img src="flags/flag-thumb-up.png" alt="Flag: thumb-up"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Si vous êtes responsables d'une société, changer de comptabilité c'est arbitrer<br/>entre risques et coûts.<br/><br/>Savoir "gérer les sauvegardes et restauration" et "migrer automatiquement",<br/>permet à la fois de minimiser le temps de mise en oeuvre, les risques et les<br/>coùts.
+</td></tr></table>
+  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1'>2.5.2.  Durée courte création contexte</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Une migration automatique est rapide.<br/><br/>C'est la possibilité avec la gestion des sauvegardes et restauration de<br/>rapidement recréer un contexte.<br/><br/>Dés lors que l'on sait recréer le contexte, on peut explorer sans risque.<br/><br/>Pour certains contextes d'entreprises, l'exploration se fait dans le "bac à<br/>sable" (des machines dédiées isolées). Le fait d'avoir une migration automatique<br/>permettra alors le déploiement automatique dans le contexte "industriel" après<br/>validation dans le contexte "bac à sable".
+</td></tr></table>
+
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:0'>2.5.2.1.  pas besoin de resaisir</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Une migration automatique évite le temps d'une ressaisie manuelle et les erreurs<br/>de frappes potentielles
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1'>2.5.2.2.  Cela favorise</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:0'>2.5.2.2.1.  Apprentissage</span>
+            <ul class="vym-list-ul-6">
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:0'>2.5.2.2.1.1.  B-A BA</span>  </li>
+              <li><span class='vym-branch-6' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1'>2.5.2.2.1.2.  Confiance étapes clées<img src="flags/flag-thumb-up.png" alt="Flag: thumb-up"></span>
+              <ul class="vym-list-ul-7">
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:0'>2.5.2.2.1.2.1.  validation</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:1'>2.5.2.2.1.2.2.  clôture</span>  </li>
+                <li><span class='vym-branch-7' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:2'>2.5.2.2.1.2.3.  exports</span>  </li>
+              </ul>  </li>
+            </ul>  </li>
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:1,bo:4,bo:1,bo:1,bo:1'>2.5.2.2.2.  exploration<img src="flags/flag-present.png" alt="Flag: present"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Le logiciel est un PGI libre. C'est le moment d'explorer plus loin que la<br/>comptabilité de base. Pour le moment le contexte est facilement restaurable. Les<br/>méthodes de travail, l'extraction du fichier FEC sont adaptables.<br/><br/>Vous pouvez décidez d'utiliser le module "prospect". Le compte clients 411 ne<br/>suffira pas. Il vous faudra modifier le plan comptable de l'entreprise pour<br/>avoir autant de comptes que de clients. Cela peut donc affecter votre fichier<br/>FEC.<br/><br/>Vous pouvez explorer d'autres modules (facturation, compta analytique,...). Il<br/>faudra alors adapter le processus de travail avec des rôles, des<br/>responsabilités, la répartition des charges par projets donc la définition des<br/>projets,...<br/><br/>Cette phase d'exploration est très importante. Pour une entreprise il faut<br/>déterminer le bénéfice/cout des fonctionalités. On peut évidement les ignorer.<br/>Si on veut les évaluer c'est un moment crucial. Les méthodes de travail et<br/>formation afférentes ne sont pas encore figées.<br/>C'est peut-être le moment d'envisager un plan de migration plus ambitieux.
+</td></tr></table>
+  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:4,bo:2'>2.5.3.  valider dernier exercice</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:4,bo:2,bo:0'>2.5.3.1.  Validation même niveau fonctionel<img src="flags/flag-lifebelt.png" alt="Flag: lifebelt"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+valider que l'on sait au moins faire ce que l'on faisait lors du dernier<br/>exercice avec un autre outil.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:1,bo:4,bo:2,bo:1'>2.5.3.2.  Validation même résultat<img src="flags/flag-lifebelt.png" alt="Flag: lifebelt"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+en important les écritures du dernier exercice, on valide que l'on obtient les<br/>mêmes résultats qu'avec l'outils de comptabilité antérieur.
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:1,bo:4,bo:3'>2.5.4.  Conséquences non migration</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Démarrer from scratch:</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">1 eccueil : La doc &quot;Le guide de démarrage&quot; et l'idée d'apprendre sur le tas sont l'assurance de ne pas tirer la substance de l'outil.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Rien n'est dit sur la restauration. Si on ne sait pas restaurer, on ne prendra pas le risque d'explorer. On sera tétanisé lors des phases clées (validation, cloture). On ne dépassera pas l'exploitation de la comptabilité de base.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> </span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">2 eccueil : Il faut au minimum retaper toutes les écritures d'un exercice pour valider que l'on a le même niveau fonctionnel et que l'on retrouve le même résultat pour la clôture. La saisie est un processus long qui peut-être source d'erreurs.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Si on tape que les à nouveaux, alors </span><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">il y aura des doutes sur la base de départ et </span><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">au moindre problème. Le manque de confiance dans un outils va souvent de pair avec une incrimination illégitime en cas de difficultés. Le stress lié au doute entraine un travail moins efficace. Un travail moins efficace c'est aussi louper le potentiel de l'outil.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+  </li>
+      </ul>  </li>
+    </ul>
+  <h2><span class='vym-branch-1' style='color:#000000' id='mc:0,bo:2'>3.  Comment faire<img src="flags/flag-exclamationmark.png" alt="Flag: exclamationmark"></span></h2>
+    <ul class="vym-list-ul-2">
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:2,bo:0'>3.1.  Ce qu'il faut faire</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0'>3.1.1.  Adapter les journaux à l'entreprise</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+On peut avoir besoin :<br/>d'un journal spécifique pour chaque banque,<br/>chaque caisses.<br/><br/>Il est curieux que le journal AN ne soit pas présent par défaut.<br/><br/>Plus rare :<br/>un journal d'extourne,<br/>un journal pour des opérations transitoires  style ODS (Opérations Diverses<br/>Situation).<br/><br/>Il faut avoir créé ces journaux avant de démarrer l'importation des écritures.<br/>L'outil permet d'établir une correspondance dynamique entre codes de journaux<br/>mais pas une création dynamique.
+</td></tr></table>
+
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0,bo:0'>3.1.1.1.  les banques</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Autant de journaux qu'il y a de comptes banquaires.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0,bo:1'>3.1.1.2.  les caisses</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Il est facile de rajouter un journal par caisses dans le logiciel de<br/>comptabilité.<br/>Par contre, la façon de paramétrer le logiciel de caisse de la version libre<br/>semble ne prévoir qu'une caisse. <br/>Si vous avez des entités réparties (siège, usines,...) justifiant plusieurs<br/>caisses, mon expérience de la version libre ne me permets pas de répondre.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0,bo:2'>3.1.1.3.  les A Nouveaux<img src="flags/flag-smiley-omb.png" alt="Flag: smiley-omb"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Ce journal n'est pas présent par défaut dans OpenConcerto.<br/><br/>Option payante ?
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0,bo:3'>3.1.1.4.  les extournes</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+En général dans OD
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0,bo:4'>3.1.1.5.  les OD Situation</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Rare.<br/>Potentiellement dans OD.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:0,bo:5'>3.1.1.6.  ...</span>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1'>3.1.2.  Adapter le plan comptable à celui de l'entreprise</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+
+</td></tr></table>
+
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:0'>3.1.2.1.  Le format des comptes</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> Le format des comptes peut surprendre. Certain logiciels utilisent des comptes sur 8 caractères par défaut. OpenConcerto utilise le PCG sans 0 de complétion.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Lors de l'import du fichier FEC, les comptes vont être créés avec le libellé &quot;création automatique&quot; s'ils ne sont pas prélablement créés. </span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">!!! Attention au risque de se retrouver avec plétore de comptes aux libéllés &quot;creation automatique&quot; pour des histoires de zéros non significatifs.!!!</span></p>
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:1'>3.1.2.2.  les comptes banques</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Il faut lier la création des journaux spécifiques aux banques avec les comptes<br/>correspondants.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:2'>3.1.2.3.  les comptes caisses</span>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:3'>3.1.2.4.  les comptes fournisseurs</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Si l'on prévoit de suivre ses fournisseurs de façon indépendante, il va falloir leur créer des comptes 401##### spécifiques.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:4'>3.1.2.5.  les comptes clients</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Si l'on prévoit de suivre ses clients de façon indépendante, il va falloir leur<br/>créer des comptes 411##### spécifiques.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:5'>3.1.2.6.  ...</span>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:6'>3.1.2.7.  La norme</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:0,bo:1,bo:6,bo:0'><a href="https://www.anc.gouv.fr/files/live/sites/anc/files/contributed/ANC/1_Normes_fran%c3%a7aises/Reglements/Recueils/PCG_Janvier2019/PCG_2019.pdf">3.1.2.7.1.  https://www.anc.gouv.fr/...<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:0,bo:2'>3.1.3.  Adapter le fichier fec pour importer les écritures</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">structure du fichier: ordonnacement des colonnes, </span><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Pas de ligne d'entête.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Encodage UTF 8 (d'après un commentaire dans le forum)</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Pas de lignes blanches.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Gestion des fins de lignes en fonction de l'OS (CR/LF).</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Caractère virgule comme séparateur des décimales. (langue français).</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Le type de fichier pour l'import des écritures :</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">- format .csv d'après l'interface windows mais le .ods est reconnu,</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">- Uniquement le format .ods sous MAC...</span></p>
+</td></tr></table>
+
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:2,bo:0'>3.1.3.1.  encodage UTF-8<img src="flags/flag-exclamationmark.png" alt="Flag: exclamationmark"></span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:0,bo:2,bo:0,bo:0'><a href="file:Editions/Justification-encodage-UTF8.pdf">3.1.3.1.1.  Justification-encodage-UTF8.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:0,bo:2,bo:0,bo:1'><a href="Editions/Justification-encodage-UTF8.pdf">3.1.3.1.2.  2021-05-14<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:0,bo:2,bo:1'>3.1.3.2.  Suppression lignes inutiles</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Le fichier FEC ne doit contenir ni en-tête ni lignes vides.
+</td></tr></table>
+  </li>
+        </ul>  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:2,bo:1'>3.2.  Quels outils</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:1,bo:0'>3.2.1.  notepadqq/notepad++</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Les explications relatives à l'UTF8 sont illustrées avec notepadqq sous Unix.<br/><br/>Un éditeur qui permet de gérer le type d'encodage convient.
+</td></tr></table>
+  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:1,bo:1'>3.2.2.  Libre Office</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Un fichier libre office associé à cette documentation contient des macros. <br/>Ces macros vont servir à :<br/>- suppression des zéros non signoficatifs pour les numéros de comptes,<br/>- identification des journaux manquants<br/>- identification des comptes manquants.
+</td></tr></table>
+  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:2,bo:2'>3.3.  Procédure pour 
+importer des ecritures</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:2,bo:0'>3.3.1.  Le schéma</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:2,bo:0,bo:0'><a href="file:Editions/procedure-migration-vers-OpenConcerto.pdf">3.3.1.1.  procedure-migration-vers-OpenConcerto.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:2,bo:1'>3.3.2.  lecture schéma</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Les étapes sont déroulées de haut en bas.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Ce fichier FEC a été produit avec un logiciel tier (Sage, EBP, Ciel, tableur,...) peut-être sur un autre OS (Windows/Unix, MAC OS,...).</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Open Concerto utilise les formats d'interfaces open document (ods) ou csv.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">On adapte le fichier FEC à la configuration d'Open Concerto / OS : encodage UTF-8, fin de lignes (CR/LF ou LF).</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">On supprime les lignes vides.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Dans Open Concerto, on crée la structure comptable de la société avec des paramètres par défaut : </span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	- liste de journaux, </span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	- Plan Comptable général: détaillé, base ou simplifié).</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Dans le classeur libre office contenant les macros, on récupére: </span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">  - le fichier FEC</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">  - la structure comptable de la société.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">On utilise une macro pour les comparer.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Il peut manquer des journaux, des comptes (typiquement fournisseurs, clients, banques,...)</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">On adapte la structure comptable de la sté :</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	- au niveau d'Open Concerto (ajout de cptes, journaux),</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">	- au niveau de libre office (par exemple, regroupement de tous les fournisseurs dans un seul compte, suppression des 0 inutiles, ...)</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">On met en forme le fichier FEC pour l'import. (structure champs, pas d'entête,...)</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">On l'importe.</span><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">  </span></p>
+</td></tr></table>
+  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:2,bo:2'>3.3.3.  Remarque</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Ce qui provient d'un tier vous le sauvegardez dans un espace lié au tier.<br/><br/>Ce que vous utilisez pour OpenConcerto, vous le stockez dans un espace lié à<br/>OpenConcerto.<br/><br/>Comme le fichier FEC provient d'un tier, à priori vous le sauvegarder dans<br/>l'espace lié au tier.<br/><br/>Comme ensuite vous adaptez ce fichier pour Open Concerto, vous faites une copie<br/>locale.<br/><br/>Le schéma ne porte que sur la migration vers Open Concerto et l'usage de la<br/>copie locale du fichier FEC.<br/><br/>L'obligation de sauvegarde de documents administratifs est relativement longue.<br/>Le fichier FEC fait partie des pièces exigibles. <br/>Autant que vous sachiez le retrouver avec les autres documents de l'exercice<br/>correspondant.<br/>!!!
+</td></tr></table>
+  </li>
+      </ul>  </li>
+      <li><span class='vym-branch-2' style='color:#000000' id='mc:0,bo:2,bo:3'>3.4.  instantiations
+ procédure
+importation des écritures</span>
+      <ul class="vym-list-ul-3">
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0'>3.4.1.  Création Sté</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0,bo:0'>3.4.1.1.  Point de sauvegarde initial</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+OpenConcerto utilise une base de données.<br/>Sauvegarder la base avant la toute première saisie évitera de devoir tout<br/>effacer et ré-installer OpenConcerto en cas de soucis.<br/><br/>Cela permet aussi de valider votre processus de sauvegarde.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0,bo:1'>3.4.1.2.  Validation sauvegardes</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Avec deux sauvegardes qui ne coutent pas chères, c'est l'occasion d'expérimenter<br/>la restauration de la base de données.<br/>- restaurer l'état initial et vérifier que la sté que vous venez de créer dans<br/>la base n'existe plus.<br/>- restaurer l'état après création de la sté et vérifier
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0,bo:2'>3.4.1.3.  journaux défaut</span>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0,bo:3'>3.4.1.4.  comptes défaut</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph">Choisir le plan général développé pour minimiser les saisies de comptes pour adapter le plan comptable de votre entreprise.</p>
+<p class="vym-note-paragraph">Si vous choisissez le modèle de base ou le modèle abrégé c'est que vous avez votre raison. <span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> </span></p>
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0,bo:4'>3.4.1.5.  Point de sauvegarde création</span>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:0,bo:5'>3.4.1.6.  Dates Exercice<img src="flags/flag-exclamationmark.png" alt="Flag: exclamationmark"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Il faut que la date de début et de fin soient compatible avec les dates des<br/>écritures importées.<br/>Attention car on ne peut pas revenir sur un exercice clos et la date de début<br/>sera automatiquement comme si rien ne peut exister avant et était clos.
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:1'>3.4.2.  Exports</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:1,bo:0'>3.4.2.1.  Export liste Journaux</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+OpenConcerto menu : Structure &gt; Gestion des journaux comptables<br/>Selectionner tous les journaux.<br/>Cliquer sur la disquette (en bas à gauche de la feuille) pour sauvegarder dans<br/>un fichier ods. <br/>Sauvegarder sous "journaux.ods".
+</td></tr></table>
+
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:1,bo:0,bo:0'><a href="file:Editions/export-journaux.pdf">3.4.2.1.1.  export-journaux.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:1,bo:1'>3.4.2.2.  Export plan comptable</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:1,bo:1,bo:0'><a href="file:Editions/export-comptes.pdf">3.4.2.2.1.  export-comptes.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:1,bo:2'>3.4.2.3.  FEC ILL</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+OpenConcerto, <br/>normalement, menu : Comptabilité&gt;Export des ecritures <br/>Puis dans le menu le type de FEC que vous voulez.<br/><br/>Je préfère menu : Comptabilité &gt; liste des écritures.<br/><br/>2 avantages : <br/>- Je vais pouvoir générer un fichier ods plutôt qu'un .csv. Comme l'interface<br/>est mieux faites, je vais conserver les accents spécifiques à l'UTF8.<br/><br/>- Je vais choisir la date de saisie de la 1ere écriture et de la dernière sans<br/>me préoccuper des exercices clos. Cela va me permettre de migrer non pas la<br/>dernière année mais toutes la comptabilité depuis le début. C'est utile si on<br/>veut comparer le résultat entre deux logiciels de comptabilité.<br/><br/>Je sauvegarde dans le fichier "ecriture.ods".
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2'>3.4.3.  Préparation FEC tier
+=&gt; FEC_tmp.csv</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2,bo:0'>3.4.3.1.  Le shéma instancié</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2,bo:0,bo:0'><a href="file:Editions/fec_export2tmp.pdf">3.4.3.1.1.  fec_export2tmp.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2,bo:1'>3.4.3.2.  </span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2,bo:1,bo:0'>3.4.3.2.1.  UTF-8<img src="flags/flag-exclamationmark.png" alt="Flag: exclamationmark"></span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Sous Unix :<br/>Avec Notepadqq, menu Encoding/Convert to UTF8<br/><br/>Sous Windows:<br/>Avec Notepadd++, convertir en UTF8
+</td></tr></table>
+  </li>
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2,bo:1,bo:1'>3.4.3.2.2.  OS (CR/LF)</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Sous Unix :<br/>Notepadqq, menu :<br/>Edition&gt;End Of Line&gt;OS X Format<br/><br/>Sous Windows :<br/>Notepad++ , menu :<br/>Edition/Convertir les sauts de lignes/Convertir en format Unix(LF)
+</td></tr></table>
+  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:2,bo:2'>3.4.3.3.  Suppression lignes vides</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Sous Unix, ligne de commande :</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">wc -l NomDuFichier  #affiche le nombre de lignes</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">sed -i '/^\s*$/d' NomDuFichier</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">wc -l NomDuFichier #affiche nb lignes après supp lignes vides</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> </span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Explications sed:</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-i : le fichier de sortie est le même que le fichier d'entrée</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">/....../ : ...... la chaine a rechercher</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">^ : début de ligne</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">\s* : nombre quelconque de séparateurs</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">$ : fin de ligne</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">d : commande delete</span></p>
+<p class="vym-note-paragraph"><br /></p>
+</td></tr></table>
+  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:3'>3.4.4.  Suppression des zéros
+FEC_tmp.csv =&gt; FEC_tmp.ods</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:3,bo:0'>3.4.4.1.  FEC-macro.ods</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Le fichier ods avec les macros à récupérer.<br/>Il faudra peut-être cliquer dans un pop-up ou activer les macros. Cf le fichier<br/>fec_csv2ods.pdf pour plus de détail.
+</td></tr></table>
+
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:3,bo:0,bo:0'><a href="file:Editions/FEC-macro.ods">3.4.4.1.1.  FEC-macro.ods<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:3,bo:1'>3.4.4.2.  processus</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:3,bo:1,bo:0'><a href="file:Editions/fec_csv2ods.pdf">3.4.4.2.1.  fec_csv2ods.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:4'>3.4.5.  Préparation Structurelle</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:4,bo:0'>3.4.5.1.  Adaptation Journaux</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:4,bo:0,bo:0'><a href="file:Editions/Adaptation-Journaux.pdf">3.4.5.1.1.  Adaptation-Journaux.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:4,bo:1'>3.4.5.2.  Adaptation plan comptable</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:4,bo:1,bo:0'><a href="file:Editions/Adaptation-comptes.pdf">3.4.5.2.1.  Adaptation-comptes.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:4,bo:2'>3.4.5.3.  Sauvegarde Structure O.C. Entreprise</span>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:5'>3.4.6.  Importation ecritures dans O.C.</span>
+        <ul class="vym-list-ul-4">
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:5,bo:0'>3.4.6.1.  Remarques</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+Avec OpenConcerto 1.6.2 Le fichier FEC pour importer des écritures était un<br/>fichier .csv<br/><br/>Avec la 1.6.3 c'est un .ods (fichier calc libreOffice.)<br/><br/>Dans les 2 cas l'encodage attendu est de l'UTF8.<br/><br/>Il se trouve que dans la majorité des cas libreoffice va produire un fichier xml<br/>au format UTF8. Ce fichier xml est encapsuler dans le .ods.<br/><br/>Le fait que libre office produise des fichiers avec un encodage UTF8 est<br/>probablement lié à la variable langue du système lors de l'installation de libre<br/>office. LibreOffice sait lire d'autres encodages mais produira un fichier xml<br/>encapsuler dans le .ods avec un encodage UTF8 dès lors qu'il est paramétré en<br/>UTF8.<br/><br/>Si vous n'avez jamais vérifié votre paramétrage de libreoffice, créer un fichier<br/>ods quelconque et vérifiez le:<br/>- transformer l'extension .ods en .zip<br/>- extraire les fichiers<br/>- vérifier que le fichier content.xml est encodé en UTF8 et contient sur sa<br/>première ligne : encoding="UTF-8"<br/>- remettre l'extension .ods pour récupérer votre fichier libreoffice.<br/><br/>Le pop-up qui dit quel type de fichier (extension) est attendu n'a pas été mis à<br/>jour entre les versions.<br/><br/>On voit ici comment créer le fichier .ods pour la 1.6.3.<br/>Si vous êtes en 1.6.2 il vous suffira d'exporter ce fichier au format csv.
+</td></tr></table>
+  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:5,bo:1'>3.4.6.2.  création FEC-import.ods</span>
+<table class="vym-note"><tr><td class="vym-note-flag">
+<td>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Sous libre Office, créer le fichier FEC-import.ods.</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Ouvrer en parallèle le fichier FEC-tmp.ods.</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">Recopier les colonnes correspondantes en respectant l'ordre :</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-date</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-journal</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-n° de compte</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-nom de la pièce</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-libellé</span></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;">-débit crédit</span></p>
+<p class="vym-note-paragraph"><br /></p>
+<p class="vym-note-paragraph"><span style=" font-family:'DejaVu Sans Mono'; font-size:12pt; color:#000000;"> </span></p>
+</td></tr></table>
+
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:5,bo:1,bo:0'><a href="file:Editions/creation-fec-import.pdf">3.4.6.2.1.  creation-fec-import.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+          <li><span class='vym-branch-4' style='color:#000000' id='mc:0,bo:2,bo:3,bo:5,bo:2'>3.4.6.3.  importation</span>
+          <ul class="vym-list-ul-5">
+            <li><span class='vym-branch-5' style='color:#000000' id='mc:0,bo:2,bo:3,bo:5,bo:2,bo:0'><a href="file:Editions/importation-fec.pdf">3.4.6.3.1.  importation-fec.pdf<img src="flags/flag-url.png" alt="Flag: url"></a></span>  </li>
+          </ul>  </li>
+        </ul>  </li>
+        <li><span class='vym-branch-3' style='color:#000000' id='mc:0,bo:2,bo:3,bo:6'>3.4.7.  Création FEC pour O. C.</span>  </li>
+      </ul>  </li>
+    </ul>
+  
+
+<map name='imagemap'>
+  <area shape='rect' coords='28.5,967.563,414.094,999.563' href='#mc:0' alt='Migrer comptabilité vers OpenConcerto'>
+  <area shape='rect' coords='250.518,1325.53,490.378,1355.53' href='#mc:0,bo:0' alt='Installation Open Concerto'>
+  <area shape='rect' coords='511.378,1093.03,533.378,1115.03' href='https://www.openconcerto.org/fr/telechargement.html' alt='External link: Le site'>
+  <area shape='rect' coords='533.378,1093.03,588.456,1120.03' href='#mc:0,bo:0,bo:0' alt='Le site'>
+  <area shape='rect' coords='511.378,1146.53,593.862,1173.53' href='#mc:0,bo:0,bo:1' alt='Pré-requis'>
+  <area shape='rect' coords='636.862,1122.03,668.018,1146.03' href='#mc:0,bo:0,bo:1,bo:0' alt='java'>
+  <area shape='rect' coords='636.862,1148.03,709.003,1172.03' href='#mc:0,bo:0,bo:1,bo:1' alt='libre office'>
+  <area shape='rect' coords='636.862,1174.03,714.534,1198.03' href='#mc:0,bo:0,bo:1,bo:2' alt='PostgreSQL'>
+  <area shape='rect' coords='511.378,1380.53,540.143,1407.53' href='#mc:0,bo:0,bo:2' alt='OS'>
+  <area shape='rect' coords='561.143,1200.03,622.971,1224.03' href='#mc:0,bo:0,bo:2,bo:0' alt='Windows'>
+  <area shape='rect' coords='561.143,1382.03,600.706,1406.03' href='#mc:0,bo:0,bo:2,bo:1' alt='Linux'>
+  <area shape='rect' coords='621.706,1374.03,679.221,1414.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0' alt='Ubuntu
+OC 1.6.3'>
+  <area shape='rect' coords='700.221,1343.03,775.628,1367.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0' alt='monoposte'>
+  <area shape='rect' coords='796.628,1239.03,934.565,1263.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0' alt='vérification pré-requis'>
+  <area shape='rect' coords='977.565,1226.03,1008.72,1250.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0,bo:0' alt='java'>
+  <area shape='rect' coords='977.565,1252.03,1049.71,1276.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:0,bo:1' alt='libre office'>
+  <area shape='rect' coords='818.628,1278.03,929.956,1302.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:1' alt='Non automatique'>
+  <area shape='rect' coords='796.628,1382.03,890.378,1406.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2' alt='Manuellement'>
+  <area shape='rect' coords='933.378,1304.03,1037.22,1328.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:0' alt='Téléchargement'>
+  <area shape='rect' coords='911.378,1395.03,985.596,1419.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1' alt='Installation'>
+  <area shape='rect' coords='1028.6,1330.03,1126.63,1354.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:0' alt='pre-Installation'>
+  <area shape='rect' coords='1028.6,1356.03,1223.3,1380.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:1' alt='Configuration au 1er lancement'>
+  <area shape='rect' coords='1244.3,1356.03,1266.3,1378.03' href='file:Videos/premier-lancement-OpenConcerto.mkv' alt='External link: vidéo'>
+  <area shape='rect' coords='1266.3,1356.03,1306.67,1380.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:1,bo:0' alt='vidéo'>
+  <area shape='rect' coords='1006.6,1421.03,1061.19,1445.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2' alt='espaces'>
+  <area shape='rect' coords='1082.19,1395.03,1140.14,1419.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0' alt='Système'>
+  <area shape='rect' coords='1183.14,1382.03,1285.82,1406.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0,bo:0' alt='les programmes'>
+  <area shape='rect' coords='1183.14,1408.03,1312.5,1432.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:0,bo:1' alt='Paramétrisation O.C.'>
+  <area shape='rect' coords='1082.19,1447.03,1128.72,1471.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1' alt='Travail'>
+  <area shape='rect' coords='1171.72,1434.03,1235.77,1458.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1,bo:0' alt='DataBase'>
+  <area shape='rect' coords='1171.72,1460.03,1261.38,1484.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:0,bo:2,bo:1,bo:2,bo:1,bo:1' alt='Configuration'>
+  <area shape='rect' coords='700.221,1512.03,778.159,1536.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1' alt='multipostes'>
+  <area shape='rect' coords='799.159,1486.03,963.675,1510.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:0' alt='openconcerto.org / Vidéos'>
+  <area shape='rect' coords='984.675,1486.03,1006.67,1508.03' href='https://youtu.be/yT9kDulrNW0' alt='External link: vidéo youtube'>
+  <area shape='rect' coords='1006.67,1486.03,1099.21,1510.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:0,bo:0' alt='vidéo youtube'>
+  <area shape='rect' coords='821.159,1512.03,942.925,1536.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:1' alt='gestion des droits ?'>
+  <area shape='rect' coords='799.159,1538.03,813.159,1562.03' href='#mc:0,bo:0,bo:2,bo:1,bo:0,bo:1,bo:2' alt=''>
+  <area shape='rect' coords='561.143,1564.03,596.862,1588.03' href='#mc:0,bo:0,bo:2,bo:2' alt='MAC'>
+  <area shape='rect' coords='538.094,533,639.688,563' href='#mc:0,bo:1' alt='Préambule'>
+  <area shape='rect' coords='660.688,55.5,859.453,82.5' href='#mc:0,bo:1,bo:0' alt='OpenConcerto c'est quoi ?'>
+  <area shape='rect' coords='880.453,5,1097.83,29' href='#mc:0,bo:1,bo:0,bo:0' alt='Logiciel prof gestion libre et gratuit'>
+  <area shape='rect' coords='1118.83,5,1140.83,27' href='https://www.openconcerto.org/fr/fonctionnalites.html' alt='External link: https://www.openconcerto.org/fr/fonctionnalites.html'>
+  <area shape='rect' coords='1140.83,5,1471.06,29' href='#mc:0,bo:1,bo:0,bo:0,bo:0' alt='https://www.openconcerto.org/fr/fonctionnalites.html'>
+  <area shape='rect' coords='880.453,70,946.516,94' href='#mc:0,bo:1,bo:0,bo:1' alt='Je retiens'>
+  <area shape='rect' coords='989.516,31,1112.14,55' href='#mc:0,bo:1,bo:0,bo:1,bo:0' alt='Comptabilité (libre)'>
+  <area shape='rect' coords='967.516,57,1139.27,81' href='#mc:0,bo:1,bo:0,bo:1,bo:1' alt='gestion clients/fournisseurs'>
+  <area shape='rect' coords='967.516,83,1115,107' href='#mc:0,bo:1,bo:0,bo:1,bo:2' alt='Caisse, certificat payant'>
+  <area shape='rect' coords='967.516,109,1134.42,133' href='#mc:0,bo:1,bo:0,bo:1,bo:3' alt='Paye, DSN (module payant)'>
+  <area shape='rect' coords='1155.42,109,1177.42,131' href='https://www.openconcerto.org/fr/paye.html' alt='External link: https://www.openconcerto.org/fr/paye.html'>
+  <area shape='rect' coords='1177.42,109,1446.64,133' href='#mc:0,bo:1,bo:0,bo:1,bo:3,bo:0' alt='https://www.openconcerto.org/fr/paye.html'>
+  <area shape='rect' coords='660.688,222.5,850.453,249.5' href='#mc:0,bo:1,bo:1' alt='OpenConcerto pour qui ?'>
+  <area shape='rect' coords='893.453,198.5,1093.64,223.5' href='#mc:0,bo:1,bo:1,bo:0' alt='version libre sous conditions'>
+  <area shape='rect' coords='1114.64,161,1302.36,209' href='#mc:0,bo:1,bo:1,bo:0,bo:0' alt='Qui est assujeti aux log. caisse  sécurisé'>
+  <area shape='rect' coords='1323.36,147,1579,171' href='#mc:0,bo:1,bo:1,bo:0,bo:0,bo:0' alt='Communiqué simplification au 1 janv 2018'>
+  <area shape='rect' coords='1600,135,1622,157' href='file:Editions/Communique-presse-Darmanin-15-juin-201722503.pdf' alt='External link: Communique presse Darmanin 15 juin 201722503.pdf'>
+  <area shape='rect' coords='1622,135,1852.39,183' href='#mc:0,bo:1,bo:1,bo:0,bo:0,bo:0,bo:0' alt='Communique presse Darmanin 15 juin 201722503.pdf'>
+  <area shape='rect' coords='1323.36,185,1451.58,209' href='#mc:0,bo:1,bo:1,bo:0,bo:0,bo:1' alt='Champ d'application'>
+  <area shape='rect' coords='1472.58,185,1494.58,207' href='https://www.impots.gouv.fr/portail/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de' alt='External link: https://www.impots.gouv.fr/portail/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de'>
+  <area shape='rect' coords='1494.58,185,2280.47,209' href='#mc:0,bo:1,bo:1,bo:0,bo:0,bo:1,bo:0' alt='https://www.impots.gouv.fr/portail/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de'>
+  <area shape='rect' coords='1323.36,211,1432.44,235' href='#mc:0,bo:1,bo:1,bo:0,bo:0,bo:2' alt='arbre de décision'>
+  <area shape='rect' coords='1453.44,211,1475.44,233' href='https://www.impots.gouv.fr/portail/suis-je-oblige-davoir-un-logiciel-de-caisse-securise' alt='External link: https://www.impots.gouv.fr/portail/suis-je-oblige-davoir-un-logiciel-de-caisse-securise'>
+  <area shape='rect' coords='1475.44,211,1987.44,235' href='#mc:0,bo:1,bo:1,bo:0,bo:0,bo:2,bo:0' alt='https://www.impots.gouv.fr/portail/suis-je-oblige-davoir-un-logiciel-de-caisse-securise'>
+  <area shape='rect' coords='1114.64,237,1344.66,261' href='#mc:0,bo:1,bo:1,bo:0,bo:1' alt='Obligation de téléprocédure (EDI/EFI)'>
+  <area shape='rect' coords='1365.66,237,1387.66,259' href='https://www.impots.gouv.fr/portail/professionnel/obligations-de-teleprocedures' alt='External link: https://www.impots.gouv.fr/portail/professionnel/obligations-de-teleprocedures'>
+  <area shape='rect' coords='1387.66,237,1872.3,261' href='#mc:0,bo:1,bo:1,bo:0,bo:1,bo:0' alt='https://www.impots.gouv.fr/portail/professionnel/obligations-de-teleprocedures'>
+  <area shape='rect' coords='1114.64,263,1136.64,285' href='https://www.economie.gouv.fr/entreprises/declaration-sociale-nominative-dsn' alt='External link: DSN'>
+  <area shape='rect' coords='1158.64,263,1192.11,287' href='#mc:0,bo:1,bo:1,bo:0,bo:2' alt='DSN'>
+  <area shape='rect' coords='871.453,289,1111.8,337' href='#mc:0,bo:1,bo:1,bo:1' alt='Autres cas, soit des modules payants, soit une version plus complète payante.'>
+  <area shape='rect' coords='660.688,376.5,859.688,403.5' href='#mc:0,bo:1,bo:2' alt='Open Concerto pourquoi ?'>
+  <area shape='rect' coords='902.688,352,953.719,376' href='#mc:0,bo:1,bo:2,bo:0' alt='Le coùt'>
+  <area shape='rect' coords='996.719,339,1079.39,363' href='#mc:0,bo:1,bo:2,bo:0,bo:0' alt='d'acquisition'>
+  <area shape='rect' coords='996.719,365,1087.16,389' href='#mc:0,bo:1,bo:2,bo:0,bo:1' alt='d'exploitation'>
+  <area shape='rect' coords='902.688,391,966.547,415' href='#mc:0,bo:1,bo:2,bo:1' alt='évolution'>
+  <area shape='rect' coords='1009.55,391,1067.42,415' href='#mc:0,bo:1,bo:2,bo:1,bo:0' alt='PGI libre'>
+  <area shape='rect' coords='902.688,417,969.953,441' href='#mc:0,bo:1,bo:2,bo:2' alt='formation'>
+  <area shape='rect' coords='990.953,417,1181.25,441' href='#mc:0,bo:1,bo:2,bo:2,bo:0' alt='PGI libre =&gt; accessible en école'>
+  <area shape='rect' coords='660.688,623.5,682.688,645.5' href='https://www.openconcerto.org/fr/documentation.html' alt='External link: Open Concerto documentations'>
+  <area shape='rect' coords='682.688,623.5,922.781,650.5' href='#mc:0,bo:1,bo:3' alt='Open Concerto documentations'>
+  <area shape='rect' coords='965.781,443,1109.17,467' href='#mc:0,bo:1,bo:3,bo:0' alt='Le guide de démarrage'>
+  <area shape='rect' coords='1130.17,443,1152.17,465' href='https://www.openconcerto.org/fr/Guide_OpenConcerto.pdf' alt='External link: https://www.openconcerto.org/fr/Guide_OpenConcerto.pdf'>
+  <area shape='rect' coords='1152.17,443,1514.25,467' href='#mc:0,bo:1,bo:3,bo:0,bo:0' alt='https://www.openconcerto.org/fr/Guide_OpenConcerto.pdf'>
+  <area shape='rect' coords='943.781,482,1056.52,506' href='#mc:0,bo:1,bo:3,bo:1' alt='Le manuel officiel'>
+  <area shape='rect' coords='1099.52,469,1166.8,493' href='#mc:0,bo:1,bo:3,bo:1,bo:0' alt='Sommaire'>
+  <area shape='rect' coords='1187.8,469,1209.8,491' href='https://www.openconcerto.org/fr/telechargement/Manuel_OpenConcerto_Sommaire.pdf' alt='External link: https://www.openconcerto.org/fr/telechargement/Manuel_OpenConcerto_Sommaire.pdf'>
+  <area shape='rect' coords='1209.8,469,1746.61,493' href='#mc:0,bo:1,bo:3,bo:1,bo:0,bo:0' alt='https://www.openconcerto.org/fr/telechargement/Manuel_OpenConcerto_Sommaire.pdf'>
+  <area shape='rect' coords='1099.52,495,1240.55,519' href='#mc:0,bo:1,bo:3,bo:1,bo:1' alt='Page pour commander'>
+  <area shape='rect' coords='1261.55,495,1283.55,517' href='https://www.ilm-informatique.fr/openconcerto/manuel_openconcerto' alt='External link: https://www.ilm-informatique.fr/openconcerto/manuel_openconcerto'>
+  <area shape='rect' coords='1283.55,495,1705,519' href='#mc:0,bo:1,bo:3,bo:1,bo:1,bo:0' alt='https://www.ilm-informatique.fr/openconcerto/manuel_openconcerto'>
+  <area shape='rect' coords='943.781,521,965.781,543' href='https://www.openconcerto.org/forum/' alt='External link: Le forum'>
+  <area shape='rect' coords='987.781,521,1048.95,545' href='#mc:0,bo:1,bo:3,bo:2' alt='Le forum'>
+  <area shape='rect' coords='943.781,664,990.938,688' href='#mc:0,bo:1,bo:3,bo:3' alt='Autres'>
+  <area shape='rect' coords='1011.94,651,1069.09,675' href='#mc:0,bo:1,bo:3,bo:3,bo:0' alt='youtube'>
+  <area shape='rect' coords='1090.09,651,1148.64,675' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0' alt='exemple'>
+  <area shape='rect' coords='1169.64,651,1349.98,675' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0' alt='Chaine youtube P ProfMedan'>
+  <area shape='rect' coords='1370.98,547,1392.98,569' href='https://www.youtube.com/channel/UCCpTSPz56MNXio3cYXEJmmQ' alt='External link: https://www.youtube.com/channel/UCCpTSPz56MNXio3cYXEJmmQ'>
+  <area shape='rect' coords='1392.98,547,1803.33,571' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:0' alt='https://www.youtube.com/channel/UCCpTSPz56MNXio3cYXEJmmQ'>
+  <area shape='rect' coords='1370.98,573,1452.36,597' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:1' alt='introduction'>
+  <area shape='rect' coords='1370.98,599,1457.42,623' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:2' alt='prise en main'>
+  <area shape='rect' coords='1370.98,625,1601.36,649' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:3' alt='gestion des taches, utilisateurs, droits'>
+  <area shape='rect' coords='1370.98,651,1509.02,675' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:4' alt='création d'une société'>
+  <area shape='rect' coords='1370.98,677,1503.69,701' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:5' alt='création fournisseurs'>
+  <area shape='rect' coords='1370.98,703,1492.17,727' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:6' alt='création d'un client'>
+  <area shape='rect' coords='1370.98,729,1496.52,753' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:7' alt='création d'un article'>
+  <area shape='rect' coords='1370.98,755,1515.31,779' href='#mc:0,bo:1,bo:3,bo:3,bo:0,bo:0,bo:0,bo:8' alt='devis facture réduction'>
+  <area shape='rect' coords='1011.94,781,1061.44,805' href='#mc:0,bo:1,bo:3,bo:3,bo:1' alt='GitHub'>
+  <area shape='rect' coords='1082.44,781,1244.47,805' href='#mc:0,bo:1,bo:3,bo:3,bo:1,bo:0' alt='Ce document par exemple'>
+  <area shape='rect' coords='965.781,807,1061.94,831' href='#mc:0,bo:1,bo:3,bo:4' alt='Considérations'>
+  <area shape='rect' coords='682.688,948.5,862.016,975.5' href='#mc:0,bo:1,bo:4' alt='Pourquoi une migration'>
+  <area shape='rect' coords='927.016,833,1079.86,857' href='#mc:0,bo:1,bo:4,bo:0' alt='minimisation des risques'>
+  <area shape='rect' coords='927.016,924,1119.61,948' href='#mc:0,bo:1,bo:4,bo:1' alt='Durée courte création contexte'>
+  <area shape='rect' coords='1162.61,859,1296.11,883' href='#mc:0,bo:1,bo:4,bo:1,bo:0' alt='pas besoin de resaisir'>
+  <area shape='rect' coords='1140.61,937,1223.98,961' href='#mc:0,bo:1,bo:4,bo:1,bo:1' alt='Cela favorise'>
+  <area shape='rect' coords='1244.98,924,1338.28,948' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0' alt='Apprentissage'>
+  <area shape='rect' coords='1359.28,885,1408.06,909' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:0' alt='B-A BA'>
+  <area shape='rect' coords='1359.28,937,1502,961' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1' alt='Confiance étapes clées'>
+  <area shape='rect' coords='1545,911,1611.17,935' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:0' alt='validation'>
+  <area shape='rect' coords='1545,937,1595.19,961' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:1' alt='clôture'>
+  <area shape='rect' coords='1545,963,1598.25,987' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:0,bo:1,bo:2' alt='exports'>
+  <area shape='rect' coords='1266.98,989,1343.16,1013' href='#mc:0,bo:1,bo:4,bo:1,bo:1,bo:1' alt='exploration'>
+  <area shape='rect' coords='905.016,1028,1050.55,1052' href='#mc:0,bo:1,bo:4,bo:2' alt='valider dernier exercice'>
+  <area shape='rect' coords='1093.55,1015,1306.44,1039' href='#mc:0,bo:1,bo:4,bo:2,bo:0' alt='Validation même niveau fonctionel'>
+  <area shape='rect' coords='1093.55,1041,1250.59,1065' href='#mc:0,bo:1,bo:4,bo:2,bo:1' alt='Validation même résultat'>
+  <area shape='rect' coords='927.016,1067,1105.89,1091' href='#mc:0,bo:1,bo:4,bo:3' alt='Conséquences non migration'>
+  <area shape='rect' coords='399.635,2127.05,536.463,2157.05' href='#mc:0,bo:2' alt='Comment faire'>
+  <area shape='rect' coords='579.463,1770.55,711.744,1797.55' href='#mc:0,bo:2,bo:0' alt='Ce qu'il faut faire'>
+  <area shape='rect' coords='754.744,1642.05,965.666,1666.05' href='#mc:0,bo:2,bo:0,bo:0' alt='Adapter les journaux à l'entreprise'>
+  <area shape='rect' coords='1008.67,1577.05,1086.34,1601.05' href='#mc:0,bo:2,bo:0,bo:0,bo:0' alt='les banques'>
+  <area shape='rect' coords='1008.67,1603.05,1077.03,1627.05' href='#mc:0,bo:2,bo:0,bo:0,bo:1' alt='les caisses'>
+  <area shape='rect' coords='1008.67,1629.05,1106.92,1653.05' href='#mc:0,bo:2,bo:0,bo:0,bo:2' alt='les A Nouveaux'>
+  <area shape='rect' coords='1008.67,1655.05,1095.85,1679.05' href='#mc:0,bo:2,bo:0,bo:0,bo:3' alt='les extournes'>
+  <area shape='rect' coords='1008.67,1681.05,1111.9,1705.05' href='#mc:0,bo:2,bo:0,bo:0,bo:4' alt='les OD Situation'>
+  <area shape='rect' coords='986.666,1707.05,1004.23,1731.05' href='#mc:0,bo:2,bo:0,bo:0,bo:5' alt='...'>
+  <area shape='rect' coords='754.744,1799.05,976.994,1847.05' href='#mc:0,bo:2,bo:0,bo:1' alt='Adapter le plan comptable à celui de l'entreprise'>
+  <area shape='rect' coords='1019.99,1733.05,1162.93,1757.05' href='#mc:0,bo:2,bo:0,bo:1,bo:0' alt='Le format des comptes'>
+  <area shape='rect' coords='1019.99,1759.05,1151.17,1783.05' href='#mc:0,bo:2,bo:0,bo:1,bo:1' alt='les comptes banques'>
+  <area shape='rect' coords='997.994,1785.05,1119.85,1809.05' href='#mc:0,bo:2,bo:0,bo:1,bo:2' alt='les comptes caisses'>
+  <area shape='rect' coords='1019.99,1811.05,1174.1,1835.05' href='#mc:0,bo:2,bo:0,bo:1,bo:3' alt='les comptes fournisseurs'>
+  <area shape='rect' coords='1019.99,1837.05,1139.7,1861.05' href='#mc:0,bo:2,bo:0,bo:1,bo:4' alt='les comptes clients'>
+  <area shape='rect' coords='997.994,1863.05,1015.56,1887.05' href='#mc:0,bo:2,bo:0,bo:1,bo:5' alt='...'>
+  <area shape='rect' coords='997.994,1889.05,1061.09,1913.05' href='#mc:0,bo:2,bo:0,bo:1,bo:6' alt='La norme'>
+  <area shape='rect' coords='1082.09,1889.05,1104.09,1911.05' href='https://www.anc.gouv.fr/files/live/sites/anc/files/contributed/ANC/1_Normes_fran%c3%a7aises/Reglements/Recueils/PCG_Janvier2019/PCG_2019.pdf' alt='External link: https://www.anc.gouv.fr/...'>
+  <area shape='rect' coords='1104.09,1889.05,1269.43,1913.05' href='#mc:0,bo:2,bo:0,bo:1,bo:6,bo:0' alt='https://www.anc.gouv.fr/...'>
+  <area shape='rect' coords='754.744,1929.05,991.666,1977.05' href='#mc:0,bo:2,bo:0,bo:2' alt='Adapter le fichier fec pour importer les écritures'>
+  <area shape='rect' coords='1012.67,1928.05,1115.56,1952.05' href='#mc:0,bo:2,bo:0,bo:2,bo:0' alt='encodage UTF-8'>
+  <area shape='rect' coords='1158.56,1915.05,1180.56,1937.05' href='file:Editions/Justification-encodage-UTF8.pdf' alt='External link: Justification-encodage-UTF8.pdf'>
+  <area shape='rect' coords='1180.56,1915.05,1381.85,1939.05' href='#mc:0,bo:2,bo:0,bo:2,bo:0,bo:0' alt='Justification-encodage-UTF8.pdf'>
+  <area shape='rect' coords='1158.56,1941.05,1180.56,1963.05' href='Editions/Justification-encodage-UTF8.pdf' alt='External link: 2021-05-14'>
+  <area shape='rect' coords='1180.56,1941.05,1254.93,1965.05' href='#mc:0,bo:2,bo:0,bo:2,bo:0,bo:1' alt='2021-05-14'>
+  <area shape='rect' coords='1034.67,1967.05,1198.74,1991.05' href='#mc:0,bo:2,bo:0,bo:2,bo:1' alt='Suppression lignes inutiles'>
+  <area shape='rect' coords='579.463,2004.55,673.744,2031.55' href='#mc:0,bo:2,bo:1' alt='Quels outils'>
+  <area shape='rect' coords='716.744,1993.05,858.791,2017.05' href='#mc:0,bo:2,bo:1,bo:0' alt='notepadqq/notepad++'>
+  <area shape='rect' coords='716.744,2019.05,794.525,2043.05' href='#mc:0,bo:2,bo:1,bo:1' alt='Libre Office'>
+  <area shape='rect' coords='579.463,2060.05,752.635,2106.05' href='#mc:0,bo:2,bo:2' alt='Procédure pour 
+importer des ecritures'>
+  <area shape='rect' coords='773.635,2045.05,842.963,2069.05' href='#mc:0,bo:2,bo:2,bo:0' alt='Le schéma'>
+  <area shape='rect' coords='863.963,2045.05,885.963,2067.05' href='file:Editions/procedure-migration-vers-OpenConcerto.pdf' alt='External link: procedure-migration-vers-OpenConcerto.pdf'>
+  <area shape='rect' coords='885.963,2045.05,1159.34,2069.05' href='#mc:0,bo:2,bo:2,bo:0,bo:0' alt='procedure-migration-vers-OpenConcerto.pdf'>
+  <area shape='rect' coords='795.635,2071.05,892.916,2095.05' href='#mc:0,bo:2,bo:2,bo:1' alt='lecture schéma'>
+  <area shape='rect' coords='795.635,2097.05,864.275,2121.05' href='#mc:0,bo:2,bo:2,bo:2' alt='Remarque'>
+  <area shape='rect' coords='579.463,2369.05,686.76,2461.05' href='#mc:0,bo:2,bo:3' alt='instantiations
+ procédure
+importation des écritures'>
+  <area shape='rect' coords='707.76,2188.05,788.729,2212.05' href='#mc:0,bo:2,bo:3,bo:0' alt='Création Sté'>
+  <area shape='rect' coords='831.729,2123.05,995.557,2147.05' href='#mc:0,bo:2,bo:3,bo:0,bo:0' alt='Point de sauvegarde initial'>
+  <area shape='rect' coords='831.729,2149.05,976.213,2173.05' href='#mc:0,bo:2,bo:3,bo:0,bo:1' alt='Validation sauvegardes'>
+  <area shape='rect' coords='809.729,2175.05,911.854,2199.05' href='#mc:0,bo:2,bo:3,bo:0,bo:2' alt='journaux défaut'>
+  <area shape='rect' coords='831.729,2201.05,932.619,2225.05' href='#mc:0,bo:2,bo:3,bo:0,bo:3' alt='comptes défaut'>
+  <area shape='rect' coords='809.729,2227.05,989.416,2251.05' href='#mc:0,bo:2,bo:3,bo:0,bo:4' alt='Point de sauvegarde création'>
+  <area shape='rect' coords='831.729,2253.05,925.51,2277.05' href='#mc:0,bo:2,bo:3,bo:0,bo:5' alt='Dates Exercice'>
+  <area shape='rect' coords='707.76,2305.05,761.275,2329.05' href='#mc:0,bo:2,bo:3,bo:1' alt='Exports'>
+  <area shape='rect' coords='804.275,2279.05,937.916,2303.05' href='#mc:0,bo:2,bo:3,bo:1,bo:0' alt='Export liste Journaux'>
+  <area shape='rect' coords='958.916,2279.05,980.916,2301.05' href='file:Editions/export-journaux.pdf' alt='External link: export-journaux.pdf'>
+  <area shape='rect' coords='980.916,2279.05,1107.98,2303.05' href='#mc:0,bo:2,bo:3,bo:1,bo:0,bo:0' alt='export-journaux.pdf'>
+  <area shape='rect' coords='782.275,2305.05,924.26,2329.05' href='#mc:0,bo:2,bo:3,bo:1,bo:1' alt='Export plan comptable'>
+  <area shape='rect' coords='945.26,2305.05,967.26,2327.05' href='file:Editions/export-comptes.pdf' alt='External link: export-comptes.pdf'>
+  <area shape='rect' coords='967.26,2305.05,1093.09,2329.05' href='#mc:0,bo:2,bo:3,bo:1,bo:1,bo:0' alt='export-comptes.pdf'>
+  <area shape='rect' coords='804.275,2331.05,854.291,2355.05' href='#mc:0,bo:2,bo:3,bo:1,bo:2' alt='FEC ILL'>
+  <area shape='rect' coords='707.76,2388.05,834.619,2428.05' href='#mc:0,bo:2,bo:3,bo:2' alt='Préparation FEC tier
+=&gt; FEC_tmp.csv'>
+  <area shape='rect' coords='855.619,2357.05,974.479,2381.05' href='#mc:0,bo:2,bo:3,bo:2,bo:0' alt='Le shéma instancié'>
+  <area shape='rect' coords='995.479,2357.05,1017.48,2379.05' href='file:Editions/fec_export2tmp.pdf' alt='External link: fec_export2tmp.pdf'>
+  <area shape='rect' coords='1017.48,2357.05,1145.54,2381.05' href='#mc:0,bo:2,bo:3,bo:2,bo:0,bo:0' alt='fec_export2tmp.pdf'>
+  <area shape='rect' coords='855.619,2396.05,869.619,2420.05' href='#mc:0,bo:2,bo:3,bo:2,bo:1' alt=''>
+  <area shape='rect' coords='912.619,2383.05,955.072,2407.05' href='#mc:0,bo:2,bo:3,bo:2,bo:1,bo:0' alt='UTF-8'>
+  <area shape='rect' coords='912.619,2409.05,983.557,2433.05' href='#mc:0,bo:2,bo:3,bo:2,bo:1,bo:1' alt='OS (CR/LF)'>
+  <area shape='rect' coords='877.619,2435.05,1028.92,2459.05' href='#mc:0,bo:2,bo:3,bo:2,bo:2' alt='Suppression lignes vides'>
+  <area shape='rect' coords='707.76,2461.05,846.01,2525.05' href='#mc:0,bo:2,bo:3,bo:3' alt='Suppression des zéros
+FEC_tmp.csv =&gt; FEC_tmp.ods'>
+  <area shape='rect' coords='889.01,2468.05,983.525,2492.05' href='#mc:0,bo:2,bo:3,bo:3,bo:0' alt='FEC-macro.ods'>
+  <area shape='rect' coords='1004.53,2468.05,1026.53,2490.05' href='file:Editions/FEC-macro.ods' alt='External link: FEC-macro.ods'>
+  <area shape='rect' coords='1026.53,2468.05,1121.04,2492.05' href='#mc:0,bo:2,bo:3,bo:3,bo:0,bo:0' alt='FEC-macro.ods'>
+  <area shape='rect' coords='867.01,2494.05,933.479,2518.05' href='#mc:0,bo:2,bo:3,bo:3,bo:1' alt='processus'>
+  <area shape='rect' coords='954.479,2494.05,976.479,2516.05' href='file:Editions/fec_csv2ods.pdf' alt='External link: fec_csv2ods.pdf'>
+  <area shape='rect' coords='976.479,2494.05,1080.48,2518.05' href='#mc:0,bo:2,bo:3,bo:3,bo:1,bo:0' alt='fec_csv2ods.pdf'>
+  <area shape='rect' coords='707.76,2553.05,858.713,2577.05' href='#mc:0,bo:2,bo:3,bo:4' alt='Préparation Structurelle'>
+  <area shape='rect' coords='879.713,2527.05,1011.81,2551.05' href='#mc:0,bo:2,bo:3,bo:4,bo:0' alt='Adaptation Journaux'>
+  <area shape='rect' coords='1032.81,2527.05,1054.81,2549.05' href='file:Editions/Adaptation-Journaux.pdf' alt='External link: Adaptation-Journaux.pdf'>
+  <area shape='rect' coords='1054.81,2527.05,1211.92,2551.05' href='#mc:0,bo:2,bo:3,bo:4,bo:0,bo:0' alt='Adaptation-Journaux.pdf'>
+  <area shape='rect' coords='879.713,2553.05,1048.12,2577.05' href='#mc:0,bo:2,bo:3,bo:4,bo:1' alt='Adaptation plan comptable'>
+  <area shape='rect' coords='1069.12,2553.05,1091.12,2575.05' href='file:Editions/Adaptation-comptes.pdf' alt='External link: Adaptation-comptes.pdf'>
+  <area shape='rect' coords='1091.12,2553.05,1244.15,2577.05' href='#mc:0,bo:2,bo:3,bo:4,bo:1,bo:0' alt='Adaptation-comptes.pdf'>
+  <area shape='rect' coords='879.713,2579.05,1106.62,2603.05' href='#mc:0,bo:2,bo:3,bo:4,bo:2' alt='Sauvegarde Structure O.C. Entreprise'>
+  <area shape='rect' coords='707.76,2631.05,899.385,2655.05' href='#mc:0,bo:2,bo:3,bo:5' alt='Importation ecritures dans O.C.'>
+  <area shape='rect' coords='942.385,2605.05,1016.82,2629.05' href='#mc:0,bo:2,bo:3,bo:5,bo:0' alt='Remarques'>
+  <area shape='rect' coords='942.385,2631.05,1092.09,2655.05' href='#mc:0,bo:2,bo:3,bo:5,bo:1' alt='création FEC-import.ods'>
+  <area shape='rect' coords='1113.09,2631.05,1135.09,2653.05' href='file:Editions/creation-fec-import.pdf' alt='External link: creation-fec-import.pdf'>
+  <area shape='rect' coords='1135.09,2631.05,1282.1,2655.05' href='#mc:0,bo:2,bo:3,bo:5,bo:1,bo:0' alt='creation-fec-import.pdf'>
+  <area shape='rect' coords='920.385,2657.05,998.791,2681.05' href='#mc:0,bo:2,bo:3,bo:5,bo:2' alt='importation'>
+  <area shape='rect' coords='1019.79,2657.05,1041.79,2679.05' href='file:Editions/importation-fec.pdf' alt='External link: importation-fec.pdf'>
+  <area shape='rect' coords='1041.79,2657.05,1167.03,2681.05' href='#mc:0,bo:2,bo:3,bo:5,bo:2,bo:0' alt='importation-fec.pdf'>
+  <area shape='rect' coords='707.76,2683.05,852.697,2707.05' href='#mc:0,bo:2,bo:3,bo:6' alt='Création FEC pour O. C.'>
+</map>
+<hr/>
+<table class="vym-footer">   
+        <tr> 
+        <td class="vym-footerL">schema-heuristique-migrer-vers-OpenConcerto.html</td> 
+            <td class="vym-footerC">2021-05-14</td> 
+            <td class="vym-footerR"> <a href='http://www.insilmaril.de/vym'>vym 2.6.11</a></td> 
+            </tr> 
+             </table>
+</body></html>
